@@ -1,0 +1,112 @@
+<div class="card card--contact-form">
+    <header class="card-header">
+      <p class="card-header-title">
+       Sign Up
+      </p>
+      <span class="card-header-icon has-text-grey-light">
+        <span class="icon">
+          <i class="fas fa-envelope-open" aria-hidden="true"></i>
+        </span>
+      </span>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div class="field">
+            <label class="label">Full Name</label>
+            <div class="control">
+              <input
+                class="input"
+                [ngClass]="{'is-danger': !name.valid && name.touched}"
+                type="text"
+                placeholder="Full Name"
+                name="name"
+                ngModel
+                required
+                #name="ngModel"/>
+            </div>
+            <p *ngIf="!name.valid && name.touched" class="help is-danger">Required field</p>
+          </div>
+  
+          <div class="field">
+            <label class="label">NIC</label>
+            <div class="control">
+              <input
+                class="input"
+                [ngClass]="{'is-danger': !nic.valid && nic.touched}"
+                type="text"
+                placeholder="NIC"
+                [(ngModel)]="model.nic"
+                name="nic"
+                required
+                #nic="ngModel"
+                />
+            </div>
+            <p *ngIf="!nic.valid && nic.touched" class="help is-danger">Required field</p>
+          </div>
+  
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input
+                class="input"
+                [ngClass]="{'is-danger': !email.valid && email.touched}"
+                type="email"
+                placeholder="email@email.com"
+                [(ngModel)]="model.email"
+                name="email"
+                required
+                email
+                #email="ngModel" />
+            </div>
+            <p *ngIf="!email.valid && email.touched" class="help is-danger">Please enter a valid email</p>
+          </div>
+         
+          <div class="field">
+            <label class="label">User Name</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="User name"
+                [(ngModel)]="model.username"
+                name="userName"
+                required
+                #userName="ngModel" />
+            </div>
+            <p *ngIf="!userName.valid && userName.touched" class="help is-danger">User Name is Required</p>
+          </div>
+  
+  
+         
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+              <input
+                class="input"
+                type="password"
+                placeholder="Password"
+                [(ngModel)]="model.password"
+                name="password"
+                required
+                #password="ngModel" />
+            </div>
+            <p *ngIf="!password.valid && password.touched" class="help is-danger">Password is Required</p>
+          </div>
+  
+  
+         
+  
+          <div class="field">
+            <div class="control">
+              <button
+                class="button is-dark is-fullwidth"
+                type="submit"
+                [disabled]="!f.valid">Sign up</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

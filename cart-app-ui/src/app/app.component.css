@@ -1,0 +1,13 @@
+.main {
+  padding-top: 15px;
+  background-color: whitesmoke;
+  min-height: calc(100vh - 52px);
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+
+.back {
+  background-image: url("../assets/images/spare.jpg");
+  background-position: center;
+  background-size: cover;
+}
